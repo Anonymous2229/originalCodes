@@ -1,0 +1,6 @@
+PaperReview Weakly Lost
+single instance 44 node 97 edge 560ms
+two instance 89 node 219 edge  732ms
+five instance 326 node 876 edge 807ms
+ten instance 1061 node 2968 edge 1201ms
+

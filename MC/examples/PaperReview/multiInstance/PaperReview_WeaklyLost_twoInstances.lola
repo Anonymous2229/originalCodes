@@ -1,0 +1,152 @@
+PLACE                                                                                                                                                                                                                
+
+  SAFE 1:
+
+ReviewManage.1,DeliveringPaper.1,WaitingPaperReview.1,Score.1,DeliveringReview.1,WaitingEvaluation.1,WaitingDiscuss.1,WaitingDecision.1,Letter.1,StartingReview.1,Text.1,WaitingReview.1,Review.1,WaitingSubmitReview.1,WaitingFeedback.1,DeliveringFeedback.1,Feedback.1,ReviewProcessed.1,DecisionEnd.1,WaitingSendResult.1,WaitingSendFeedback.1,ResultEnded.1,FeedbackEnded.1,AuthorStarted.1,Notification.1,AuthorEnded.1,ReviewCompleted.1,
+
+ReviewManage.2,DeliveringPaper.2,WaitingPaperReview.2,DeliveringReview.2,StartingReview.2,Text.2,WaitingReview.2,Review.2,WaitingSubmitReview.2,WaitingFeedback.2,DeliveringFeedback.2,Feedback.2,WaitingSendFeedback.2;
+
+  SAFE 2:
+  DeliveringResult.1,Evaluation.1;
+
+MARKING
+
+  ReviewManage.1:1,StartingReview.1:1,AuthorStarted.1:1,Score.1:1;
+
+TRANSITION AssignPaper.[x=1]
+
+ CONSUME ReviewManage.1:1;
+
+ PRODUCE ReviewManage.2:1,DeliveringPaper.1:1;
+
+TRANSITION AssignPaper.[x=2]
+
+ CONSUME ReviewManage.2:1;
+
+ PRODUCE WaitingPaperReview.1:1,DeliveringPaper.2:1;
+
+TRANSITION ReceiveReview.[x=1]
+
+ CONSUME WaitingPaperReview.1:1,DeliveringReview.1:1,Score.1:1;
+
+ PRODUCE Score.1:1,WaitingPaperReview.2:1;
+
+TRANSITION ReceiveReview.[x=2]
+
+ CONSUME WaitingPaperReview.2:1,DeliveringReview.2:1,Score.1:1;
+
+ PRODUCE Score.1:1,WaitingEvaluation.1:1;
+
+TRANSITION ReceivePaper.[x=1]
+
+ CONSUME StartingReview.1:1;
+
+ PRODUCE Text.1:1,WaitingReview.1:1;
+
+TRANSITION ReceivePaper.[x=2]
+
+ CONSUME StartingReview.2:1;
+
+ PRODUCE Text.2:1,WaitingReview.2:1;
+
+TRANSITION ReviewPaper.[x=1]
+
+ CONSUME WaitingReview.1:1,Text.1:1;
+
+ PRODUCE Review.1:1,WaitingSubmitReview.1:1;
+
+TRANSITION ReviewPaper.[x=2]
+
+ CONSUME WaitingReview.2:1,Text.2:1;
+
+ PRODUCE Review.2:1,WaitingSubmitReview.2:1;
+
+TRANSITION SubmitReview.[x=1]
+
+ CONSUME WaitingSubmitReview.1:1,Review.1:1;
+
+ PRODUCE DeliveringReview.1:1,StartingReview.2:1;
+
+TRANSITION SubmitReview.[x=2]
+
+ CONSUME WaitingSubmitReview.2:1,Review.2:1;
+
+ PRODUCE DeliveringReview.2:1,WaitingFeedback.1:1;
+
+TRANSITION Evaluate.[x=1]
+
+ CONSUME WaitingEvaluation.1:1,Score.1:1;
+
+ PRODUCE Evaluation.1:1,WaitingDiscuss.1:1;
+
+TRANSITION Discuss.[x=1]
+
+ CONSUME WaitingDiscuss.1:1;
+
+ PRODUCE WaitingDecision.1:1,Evaluation.1:1;
+
+TRANSITION ReceiveFeedback.[x=1]
+
+ CONSUME WaitingFeedback.1:1,DeliveringFeedback.1:1;
+
+ PRODUCE Feedback.1:1,WaitingFeedback.2:1;
+
+TRANSITION ReceiveFeedback.[x=2]
+
+ CONSUME WaitingFeedback.2:1,DeliveringFeedback.2:1;
+
+ PRODUCE Feedback.2:1,ReviewProcessed.1:1;
+
+TRANSITION PrepareAcceptanceLetter.[x=1]
+
+ CONSUME WaitingDecision.1:1,Evaluation.1:1;
+
+ PRODUCE Letter.1:1,DecisionEnd.1:1,Evaluation.1:1;
+
+TRANSITION PrepareRejectLetter.[x=1]
+
+ CONSUME WaitingDecision.1:1,Evaluation.1:1;
+
+ PRODUCE Letter.1:1,DecisionEnd.1:1,Evaluation.1:1;
+
+TRANSITION GiveResultAndFeedback.[x=1]
+
+ CONSUME DecisionEnd.1:1;
+
+ PRODUCE WaitingSendResult.1:1,WaitingSendFeedback.1:1;
+
+TRANSITION SendResult.[x=1]
+
+ CONSUME WaitingSendResult.1:1,Letter.1:1;
+
+ PRODUCE DeliveringResult.1:1,ResultEnded.1:1;
+
+TRANSITION SendFeedback.[x=1]
+
+ CONSUME WaitingSendFeedback.1:1,Evaluation.1:1;
+
+ PRODUCE WaitingSendFeedback.2:1,Evaluation.1:1,DeliveringResult.1:1,DeliveringFeedback.1:1;
+
+TRANSITION SendFeedback.[x=2]
+
+ CONSUME WaitingSendFeedback.2:1,Evaluation.1:1;
+
+ PRODUCE FeedbackEnded.1:1,DeliveringResult.1:1,DeliveringFeedback.2:1;
+
+TRANSITION ReceiveNotification.[x=1]
+
+ CONSUME DeliveringResult.1:1,AuthorStarted.1:1;
+
+ PRODUCE Notification.1:1,AuthorEnded.1:1;
+
+TRANSITION CompleteResultAndFeedback.[x=1]
+
+ CONSUME ResultEnded.1:1,FeedbackEnded.1:1;
+
+ PRODUCE ReviewCompleted.1:1;
+
+TRANSITION NotDiscuss.[x=1]
+
+ CONSUME WaitingDiscuss.1:1,Evaluation.1:1;
+
+ PRODUCE WaitingDecision.1:1,Evaluation.1:1;

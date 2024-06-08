@@ -1,0 +1,97 @@
+PLACE                                                                                                                                                                                                                
+
+  SAFE 1:
+
+TravelBooking.1,StartingSystem.1,StartingHotelTransaction.1,DeliveringTravelInfo.1,TravelInfo.1,Order.1,WaitingTravelQuotes.1,WaitingRequireHotelQuotes.1,DeliveringTravelRequest.1,Calculate.1,WaitingHotelQuotes.1,Quotes.1,DeliveringQuote.1,WaitingConfirmQuote.1,DeliveringHotelQuotes.1,WaitingSendHotelQuotes.1,WaitingFeedback.1,ReceiveSelected.1,TravelBooked.1,DeliveringSelectedQuote.1,CustomerQuote.1,WaitingSendFeedback.1,DeliveringFeedback.1,CustomerFeedback.1,EndSystem.1,WaitingMakeDecision.1,TransactionSaved.1,TransactionAborted.1;
+  SAFE 2:
+  CustomerQuotes.1,StoredHotelInfo.1;
+
+MARKING
+
+TravelBooking.1:1,StartingSystem.1:1,StartingHotelTransaction.1:1,CustomerQuotes.1:1,StoredHotelInfo.1:2;
+
+TRANSITION RequireTravelQuotes.[x=1]
+
+ CONSUME TravelBooking.1:1;
+
+ PRODUCE WaitingTravelQuotes.1:1,DeliveringTravelInfo.1:1;
+
+TRANSITION ReceiveTravelInfo.[x=1]
+
+ CONSUME DeliveringTravelInfo.1:1,StartingSystem.1:1;
+
+ PRODUCE TravelInfo.1:1,WaitingRequireHotelQuotes.1:1;
+
+TRANSITION ReceiveTravelRequest.[x=1]
+
+ CONSUME StartingHotelTransaction.1:1,DeliveringTravelRequest.1:1;
+
+ PRODUCE Order.1:1,Calculate.1:1;
+
+TRANSITION RequireHotelQuotes.[x=1]
+
+ CONSUME WaitingRequireHotelQuotes.1:1,TravelInfo.1:1;
+
+ PRODUCE DeliveringTravelRequest.1:1,WaitingHotelQuotes.1:1;
+
+TRANSITION SendQuote.[x=1]
+
+ CONSUME Calculate.1:1,Order.1:1,StoredHotelInfo.1:1;
+
+ PRODUCE StoredHotelInfo.1:1,WaitingFeedback.1:1,DeliveringQuote.1:1;
+
+TRANSITION ReceiveHotelQuotes.[x=1]
+
+ CONSUME DeliveringQuote.1:1,WaitingHotelQuotes.1:1,CustomerQuotes.1:1;
+
+ PRODUCE WaitingSendHotelQuotes.1:1,CustomerQuotes.1:1;
+
+TRANSITION ReceiveTravelQuotes.[x=1]
+
+ CONSUME WaitingTravelQuotes.1:1,DeliveringHotelQuotes.1:1;
+
+ PRODUCE WaitingConfirmQuote.1:1,Quotes.1:1;
+
+TRANSITION SelectAndConfirmTravelQuote.[x=1]
+
+ CONSUME WaitingConfirmQuote.1:1,Quotes.1:1;
+
+ PRODUCE TravelBooked.1:1,DeliveringSelectedQuote.1:1;
+
+TRANSITION SendHotelQuotes.[x=1]
+
+ CONSUME WaitingSendHotelQuotes.1:1;
+
+ PRODUCE
+
+DeliveringHotelQuotes.1:1,CustomerQuotes.1:1,ReceiveSelected.1:1;
+
+TRANSITION ReceiveSelectedQuote.[x=1]
+
+ CONSUME ReceiveSelected.1:1,DeliveringSelectedQuote.1:1;
+
+ PRODUCE CustomerQuote.1:1,WaitingSendFeedback.1:1;
+
+TRANSITION SendFeedback.[x=1]
+
+ CONSUME WaitingSendFeedback.1:1,CustomerQuote.1:1,CustomerQuotes.1:1;
+
+ PRODUCE DeliveringFeedback.1:1,EndSystem.1:1;
+
+TRANSITION ReceiveFeedback.[x=1]
+
+ CONSUME StoredHotelInfo.1:1,WaitingFeedback.1:1;
+
+ PRODUCE CustomerFeedback.1:1,WaitingMakeDecision.1:1;
+
+TRANSITION SaveTransaction.[x=1]
+
+ CONSUME WaitingMakeDecision.1:1,CustomerFeedback.1:1;
+
+ PRODUCE TransactionSaved.1:1;
+
+TRANSITION AbortTransaction.[x=1]
+
+ CONSUME WaitingMakeDecision.1:1,CustomerFeedback.1:1;
+
+ PRODUCE TransactionAborted.1:1;

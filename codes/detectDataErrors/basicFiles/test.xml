@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RESULT>
+<VALUE id="1">
+　　 <NO name="no">A1234</NO>
+    <NO name="id">1234</NO>
+　　 <ADDR>四川省XX县XX镇XX路X段XX号</ADDR>
+</VALUE>
+<VALUE id="2">
+　　 <NO name="no">B1234</NO>
+    <NO name="id">12345</NO>
+　 　<ADDR>四川省XX市XX乡XX村XX组</ADDR>
+</VALUE>
+</RESULT>

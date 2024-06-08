@@ -1,0 +1,220 @@
+CPN Tools state space report for:
+/cygdrive/E/CPNTools/examples/BookingSystem/BookingSystem_AllErrors_NoMissing_ASKCTL.cpn
+Report generated: Sun Jan 14 14:14:58 2024
+
+
+ Statistics
+------------------------------------------------------------------------
+
+  State Space
+     Nodes:  80
+     Arcs:   136
+     Secs:   0
+     Status: Full
+
+  Scc Graph
+     Nodes:  80
+     Arcs:   136
+     Secs:   0
+
+
+ Boundedness Properties
+------------------------------------------------------------------------
+
+  Best Integer Bounds
+                             Upper      Lower
+     myNet'Calculate 1       1          0
+     myNet'CustomerQuotes 1  2          1
+     myNet'Customer_Feedback 1
+                             1          0
+     myNet'Customer_Quote 1  1          0
+     myNet'Delivering_Feedback 1
+                             1          0
+     myNet'Delivering_Hotel_Quotes 1
+                             1          0
+     myNet'Delivering_Quote 1
+                             1          0
+     myNet'Delivering_Selected_Quote 1
+                             1          0
+     myNet'Delivering_TravelInfo 1
+                             1          0
+     myNet'Delivering_Travel_Request 1
+                             1          0
+     myNet'EndSystem 1       1          0
+     myNet'Order 1           1          0
+     myNet'Quotes 1          1          0
+     myNet'Starting_Hotel_Transaction 1
+                             1          0
+     myNet'Starting_System 1 1          0
+     myNet'Stored_Hotel_Info 1
+                             2          1
+     myNet'Transaction_Aborted 1
+                             0          0
+     myNet'Transaction_Saved 1
+                             1          0
+     myNet'Travel_Booked 1   1          0
+     myNet'Travel_Booking 1  1          0
+     myNet'Travel_Info 1     1          0
+     myNet'Waiting_Confirm_Quote 1
+                             1          0
+     myNet'Waiting_Feedback 1
+                             1          0
+     myNet'Waiting_Hotel_Quotes 1
+                             1          0
+     myNet'Waiting_Make_Decision 1
+                             1          0
+     myNet'Waiting_Receive_Selected_Quote 1
+                             1          0
+     myNet'Waiting_Require_Hotel_Quotes 1
+                             1          0
+     myNet'Waiting_Send_Feedback 1
+                             1          0
+     myNet'Waiting_Send_Hotel_Quotes 1
+                             1          0
+     myNet'Waiting_Travel_Quotes 1
+                             1          0
+
+  Best Upper Multi-set Bounds
+     myNet'Calculate 1   1`("n",1)
+     myNet'CustomerQuotes 1
+                         1`[]++
+1`[("A",2000)]++
+1`[("B",2400)]++
+1`[("C",3000)]
+     myNet'Customer_Feedback 1
+                         1`"accept"
+     myNet'Customer_Quote 1
+                         1`("C",3000)
+     myNet'Delivering_Feedback 1
+                         1`("C","accept")++
+1`("C","refuse")
+     myNet'Delivering_Hotel_Quotes 1
+                         1`[("C",3000)]
+     myNet'Delivering_Quote 1
+                         1`("A",2000)++
+1`("B",2400)
+     myNet'Delivering_Selected_Quote 1
+                         1`("C",3000)
+     myNet'Delivering_TravelInfo 1
+                         1`("Italy",2)
+     myNet'Delivering_Travel_Request 1
+                         1`("Italy",2)
+     myNet'EndSystem 1   1`("n",1)
+     myNet'Order 1       1`("Italy",2)
+     myNet'Quotes 1      1`[("C",3000)]
+     myNet'Starting_Hotel_Transaction 1
+                         1`("n",1)
+     myNet'Starting_System 1
+                         1`("n",1)
+     myNet'Stored_Hotel_Info 1
+                         1`("A",3,1000)++
+1`("B",2,1200)
+     myNet'Transaction_Aborted 1
+                         empty
+     myNet'Transaction_Saved 1
+                         1`("n",1)
+     myNet'Travel_Booked 1
+                         1`("n",1)
+     myNet'Travel_Booking 1
+                         1`("n",1)
+     myNet'Travel_Info 1 1`("Italy",2)
+     myNet'Waiting_Confirm_Quote 1
+                         1`("n",1)
+     myNet'Waiting_Feedback 1
+                         1`("n",1)
+     myNet'Waiting_Hotel_Quotes 1
+                         1`("n",1)
+     myNet'Waiting_Make_Decision 1
+                         1`("n",1)
+     myNet'Waiting_Receive_Selected_Quote 1
+                         1`("n",1)
+     myNet'Waiting_Require_Hotel_Quotes 1
+                         1`("n",1)
+     myNet'Waiting_Send_Feedback 1
+                         1`("n",1)
+     myNet'Waiting_Send_Hotel_Quotes 1
+                         1`("n",1)
+     myNet'Waiting_Travel_Quotes 1
+                         1`("n",1)
+
+  Best Lower Multi-set Bounds
+     myNet'Calculate 1   empty
+     myNet'CustomerQuotes 1
+                         empty
+     myNet'Customer_Feedback 1
+                         empty
+     myNet'Customer_Quote 1
+                         empty
+     myNet'Delivering_Feedback 1
+                         empty
+     myNet'Delivering_Hotel_Quotes 1
+                         empty
+     myNet'Delivering_Quote 1
+                         empty
+     myNet'Delivering_Selected_Quote 1
+                         empty
+     myNet'Delivering_TravelInfo 1
+                         empty
+     myNet'Delivering_Travel_Request 1
+                         empty
+     myNet'EndSystem 1   empty
+     myNet'Order 1       empty
+     myNet'Quotes 1      empty
+     myNet'Starting_Hotel_Transaction 1
+                         empty
+     myNet'Starting_System 1
+                         empty
+     myNet'Stored_Hotel_Info 1
+                         empty
+     myNet'Transaction_Aborted 1
+                         empty
+     myNet'Transaction_Saved 1
+                         empty
+     myNet'Travel_Booked 1
+                         empty
+     myNet'Travel_Booking 1
+                         empty
+     myNet'Travel_Info 1 empty
+     myNet'Waiting_Confirm_Quote 1
+                         empty
+     myNet'Waiting_Feedback 1
+                         empty
+     myNet'Waiting_Hotel_Quotes 1
+                         empty
+     myNet'Waiting_Make_Decision 1
+                         empty
+     myNet'Waiting_Receive_Selected_Quote 1
+                         empty
+     myNet'Waiting_Require_Hotel_Quotes 1
+                         empty
+     myNet'Waiting_Send_Feedback 1
+                         empty
+     myNet'Waiting_Send_Hotel_Quotes 1
+                         empty
+     myNet'Waiting_Travel_Quotes 1
+                         empty
+
+
+ Home Properties
+------------------------------------------------------------------------
+
+  Home Markings
+     None
+
+
+ Liveness Properties
+------------------------------------------------------------------------
+
+  Dead Markings
+     6 [80,79,78,77,76,...]
+
+  Dead Transition Instances
+     myNet'Abort_Transactin 1
+
+  Live Transition Instances
+     None
+
+
+ Fairness Properties
+------------------------------------------------------------------------
+     No infinite occurrence sequences.

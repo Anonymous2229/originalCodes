@@ -1,0 +1,8 @@
+状态空间的node和edge根据strongly lost算出来的，因为检测不出来，所以会遍历状态空间所有节点和边（？）
+
+状态空间生成时间 767ms  44 node 97 edge
+Redundant Data12ms
+Inconsistent Data16ms
+Strongly Lost Data11ms can not be detected
+Weakly Lost  Data10ms
+

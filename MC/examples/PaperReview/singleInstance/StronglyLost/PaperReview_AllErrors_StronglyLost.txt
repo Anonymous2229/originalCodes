@@ -1,0 +1,7 @@
+状态空间生成时间 809ms  27 node 41 edge
+Redundant Data11ms
+Inconsistent Data11ms
+Strongly Lost Data10ms
+Weakly Lost  Data9ms
+
+状态空间再次生成时间会短很多，十几毫秒左右，相似结构的状态空间生成也会快很多，可能是被缓存？

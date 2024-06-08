@@ -1,0 +1,101 @@
+<page id="ID6">
+  <place id="ID6924928935">
+        <text>Review Manage</text>
+        <type id="ID6924928935a">
+          <text tool="CPN Tools"
+                version="4.0.1">CTRL</text>
+        </type>
+        <initmark id="ID6924928935b">
+          <text tool="CPN Tools"
+                version="4.0.1">1`(&quot;n&quot;,1)</text>
+        </initmark>
+  </place>
+
+  <place id="ID6925171158">
+        <text>Delivering Paper</text>
+        <type id="ID6925171158a">
+          <text tool="CPN Tools"
+                version="4.0.1">PAPER</text>
+        </type>
+        <initmark id="ID6925171158b">
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+  </place>
+
+<place id="ID0555549664">
+        <text>ec4</text>
+        <type id="ID0555549664a">
+          <text tool="CPN Tools"
+                version="4.0.1">CTRL</text>
+        </type>
+        <initmark id="ID0555549664b">
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+
+ <trans id="ID0034503337" explicit="false">
+        <text>Discuss</text>
+        <cond id="ID0034503337a">
+          <text tool="CPN Tools"
+                version="4.0.1">e=&quot;borderline&quot;</text>
+        </cond>
+       <time id="ID0034503337b">   // null 
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID0034503337c">  //  null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID0034503337d">  // null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+
+<trans id="ID0551104438"  explicit="false">
+        <text>EndCycle</text>
+        <cond id="ID0551104438a">  // null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id="ID0551104438b"> // null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID0551104438c"> // null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID0551104438d">    // null
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+
+ID6926609030  ID6924928935
+
+<arc id="ID6925373301" orientation="TtoP" order="1">
+        <transend idref="ID6925253556"/>
+        <placeend idref="ID6925366859"/>
+        <bendpoint id="ID4456458281"
+                   serial="1">
+        </bendpoint>
+        <annot id="ID6925373301a">
+          <text tool="CPN Tools"
+                version="4.0.1">(&quot;Lee&quot;,&quot;A&quot;,&quot;B&quot;)
+         </text>
+       </annot>
+</arc>
+
+ <arc id="ID6925964081" orientation="PtoT" order="1">
+        <transend idref="ID6925951447"/>
+        <placeend idref="ID6925855543"/>
+        <annot id="ID6925964081a">
+          <text tool="CPN Tools"
+                version="4.0.1">(ctr,cnt)
+          </text>
+       </annot>
+</arc>

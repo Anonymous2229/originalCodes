@@ -1,0 +1,101 @@
+PLACE                                                                                                                                                                                                                
+
+  SAFE 1:
+
+PreparingRequestCake.1,StartingPrepareCake.1,StartingPrepareLayer.1,DeliveringCakeRequest.1,LayersRequest.1,PreparingRequestDecorations.1,WaitingAssignLayers.1,DeliveringLayerRequest.1,WaitingPrepareDecoration.1,LayerCake.1,DeliveringDecorationsRequest.1,WaitingDecorationsRequest.1,WaitingCake.1,StoredLayer.1,DecorationsRequest.1,Cake.1,WaitingAssignDecorations.1,WaitingSendLayer.1,WaitingEvaluation.1,DeliveringDecorationRequest.1,DeliveringDecoratedLayer.1,LayerDelivered.1,WaitingReceiveLayer.1,Evaluation.1,WaitingResult.1,SadCustomer.1,HappyCustomer.1,DeliveringCake.1,ComposeCake.1,WaitingSendCake.1,CakePrepared.1;
+
+MARKING
+
+PreparingRequestCake.1:1,StartingPrepareCake.1:1,StartingPrepareLayer.1:1,ComposeCake.1:1;
+
+TRANSITION SendCakeRequest.[x=1]
+
+ CONSUME PreparingRequestCake.1:1;
+
+ PRODUCE PreparingRequestDecorations.1:1,DeliveringCakeRequest.1:1;
+
+TRANSITION CheckCakeRequest.[x=1]
+
+ CONSUME DeliveringCakeRequest.1:1,StartingPrepareCake.1:1;
+
+ PRODUCE LayersRequest.1:1,WaitingAssignLayers.1:1;
+
+TRANSITION AssignLayers.[x=1]
+
+ CONSUME WaitingAssignLayers.1:1,LayersRequest.1:1;
+
+ PRODUCE WaitingDecorationsRequest.1:1,DeliveringLayerRequest.1:1;
+
+TRANSITION PrepareLayer.[x=1]
+
+ CONSUME StartingPrepareLayer.1:1,DeliveringLayerRequest.1:1;
+
+ PRODUCE LayerCake.1:1,WaitingPrepareDecoration.1:1;
+
+TRANSITION SendDecorationsRequest.[x=1]
+
+ CONSUME PreparingRequestDecorations.1:1;
+
+ PRODUCE DeliveringDecorationsRequest.1:1,WaitingCake.1:1;
+
+TRANSITION ReceiveCake.[x=1]
+
+ CONSUME WaitingCake.1:1,DeliveringCake.1:1;
+
+ PRODUCE Cake.1:1,WaitingEvaluation.1:1;
+
+TRANSITION Evaluate.[x=1]
+
+ CONSUME WaitingEvaluation.1:1,Cake.1:1;
+
+ PRODUCE Evaluation.1:1,WaitingResult.1:1;
+
+TRANSITION NotCelebrate.[x=1]
+
+ CONSUME Evaluation.1:1,WaitingResult.1:1;
+
+ PRODUCE SadCustomer.1:1;
+
+TRANSITION Celebrate.[x=1]
+
+ CONSUME Evaluation.1:1,WaitingResult.1:1;
+
+ PRODUCE HappyCustomer.1:1;
+
+TRANSITION ReceiveDecorationsRequest.[x=1]
+
+ CONSUME WaitingDecorationsRequest.1:1;
+
+ PRODUCE
+
+DecorationsRequest.1:1,WaitingAssignDecorations.1:1;
+
+TRANSITION AssignDecorations.[x=1]
+
+ CONSUME WaitingAssignDecorations.1:1,DecorationsRequest.1:1;
+
+ PRODUCE DeliveringDecorationRequest.1:1,WaitingReceiveLayer.1:1;
+
+TRANSITION ReceiveAndCombineLayers.[x=1]
+
+ CONSUME WaitingReceiveLayer.1:1,DeliveringDecoratedLayer.1:1,ComposeCake.1:1;
+
+ PRODUCE ComposeCake.1:1,WaitingSendCake.1:1;
+
+TRANSITION SendCake.[x=1]
+
+ CONSUME WaitingSendCake.1:1,ComposeCake.1:1;
+
+ PRODUCE CakePrepared.1:1,DeliveringCake.1:1;
+
+TRANSITION ApplyDecoration.[x=1]
+
+ CONSUME WaitingPrepareDecoration.1:1,LayerCake.1:1;
+
+ PRODUCE StoredLayer.1:1,WaitingSendLayer.1:1;
+
+TRANSITION SendDecoratedLayer.[x=1]
+
+ CONSUME WaitingSendLayer.1:1,StoredLayer.1:1;
+
+ PRODUCE DeliveringDecoratedLayer.1:1,LayerDelivered.1:1;

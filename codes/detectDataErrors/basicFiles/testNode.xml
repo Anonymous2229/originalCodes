@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/spped2svg.xsl"?>
+<Snoopy version="2" revision="3.0">
+    <netclass name="Reachability Graph"/>
+    <nodeclasses count="1">
+    <nodeclass count="20" name="Node">
+    <node id="784" net="1">
+        <attribute name="Name" id="785" net="1">
+            <![CDATA[c0]]>
+            <graphics count="1">
+                <graphic xoff="-2.00" x="718.00" y="100.00" id="786" net="1" show="1" grparent="793" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+            </graphics>
+        </attribute>
+        <attribute name="ID" id="787" net="1">
+            <![CDATA[0]]>
+            <graphics count="1">
+                <graphic x="720.00" y="100.00" id="788" net="1" show="0" grparent="793" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+            </graphics>
+        </attribute>
+        <attribute name="Places" id="789" net="1">
+            <![CDATA[SAll; null; Ø; ⊥]]>
+            <graphics count="1">
+                <graphic xoff="1.00" yoff="-48.00" x="721.00" y="52.00" id="790" net="1" show="1" grparent="793" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+            </graphics>
+        </attribute>
+        <attribute name="Comment" id="791" net="1">
+            <![CDATA[]]>
+            <graphics count="1">
+                <graphic x="720.00" y="100.00" id="792" net="1" show="1" grparent="793" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+            </graphics>
+        </attribute>
+        <graphics count="1">
+            <graphic x="720.00" y="100.00" id="793" net="1" show="1" w="64.00" h="66.00" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+        </graphics>
+    </node>
+    </nodeclass>
+</Snoopy>

@@ -1,0 +1,3 @@
+状态空间生成时间 767/562/761ms  33 node 50 edge   
+Redundant Data12ms
+Strongly Lost Data11ms

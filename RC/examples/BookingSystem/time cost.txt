@@ -1,0 +1,3 @@
+generate state space 6.76s
+strongly lost data 320ms
+strongly redundant data 260ms

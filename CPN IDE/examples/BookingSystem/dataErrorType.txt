@@ -1,0 +1,3 @@
+strongly lost data 1 暗含 strongly redundant data 1
+missing data 1
+redundant data 1

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/spped2svg.xsl"?>
+<Snoopy version="2" revision="3.0">
+    <netclass name="Reachability Graph"/>
+    <edgeclasses count="1">
+        <edgeclass count="27" name="Edge">
+            <edge source="784" target="844" id="869" net="1">
+                <attribute name="Comment" id="870" net="1">
+                    <![CDATA[]]>
+                    <graphics count="1">
+                        <graphic xoff="40.00" yoff="20.00" x="760.00" y="190.00" id="871" net="1" show="1" grparent="874" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+                    </graphics>
+                </attribute>
+                <attribute name="Transition" id="872" net="1">
+                    <![CDATA[<StartAll;Ø;Ø;⊥>]]>
+                    <graphics count="1">
+                        <graphic xoff="-86.00" yoff="-14.00" x="634.00" y="156.00" id="873" net="1" show="1" grparent="874" state="1" pen="0,0,0" brush="255,255,255" thickness="1"/>
+                    </graphics>
+                </attribute>
+                <graphics count="1">
+                    <graphic id="874" net="1" source="793" target="853" state="1" show="1" pen="0,0,0" brush="0,0,0" edge_designtype="3" thickness="1">
+                        <points count="2">
+                            <point x="720.00" y="133.00"/>
+                            <point x="720.00" y="207.00"/>
+                        </points>
+                    </graphic>
+                </graphics>
+            </edge>
+        </edgeclass>
+    </edgeclasses>
+</Snoopy>
